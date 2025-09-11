@@ -8,6 +8,8 @@ export default function useQuery(resource) {
   const [data, setData] = useState();
 
   useEffect(() => {
+    if (!resource) return;
+
     const query = async () => {
       try {
         const response = await fetch(API + resource);
