@@ -9,11 +9,13 @@ export default function App() {
 
   // SelectedID must exists, then check for guest data successful fetch, then guest details renders with the guest prop passed in.
   return (
-    <>
+    <div className="page">
       <h1>Guest List</h1>
-      <GuestList guests={guests || []} onGuestClick={setSelectedID} />
-      {SelectedID && guest && <GuestDetails guest={guest} />}
-    </>
+      <div className="main-content">
+        <GuestList guests={guests || []} onGuestClick={setSelectedID} />
+        {SelectedID && guest && <GuestDetails guest={guest} />}
+      </div>
+    </div>
   );
 }
 
@@ -42,10 +44,8 @@ function GuestDetails({ guest }) {
       <h2>
         {guest.name} Guest ID: #{guest.id}
       </h2>
-      <p>
-        Employment: {guest.job}
-        Interests: {guest.bio}
-      </p>
+      <p>Employment: {guest.job}</p>
+      <p>Interests: {guest.bio}</p>
       <footer>
         Email: {guest.email} Phone: {guest.phone}
       </footer>

@@ -1,6 +1,11 @@
-body {
+.page {
   display: flex;
   flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
 }
 
 .guests {
@@ -22,4 +27,17 @@ body {
 h2 {
   margin-top: 0.1em;
   margin-bottom: 0.3em;
+}
+
+.guest-details {
+  background-color: lightblue;
+  border-radius: 1em;
+  padding: 2em;
+  margin: 1em;
+  max-height: fit-content;
+  position: sticky;
+}
+
+.guest-details button {
+  margin-top: 1em;
 }
