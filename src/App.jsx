@@ -5,6 +5,29 @@ export default function App() {
   return (
     <>
       <h1>Guest List</h1>
+      <GuestList guests={guests} />
     </>
+  );
+}
+
+function GuestList({ guests }) {
+  return (
+    <article className="guests">
+      {guests.map((guest) => (
+        <GuestCard key={guest.id} guest={guest} />
+      ))}
+    </article>
+  );
+}
+
+function GuestCard({ guest }) {
+  return (
+    <article className="guest">
+      <h2>{guest.name} </h2>
+      <p>{guest.bio}</p>
+      <footer>
+        Email: {guest.email} Phone: {guest.phone}
+      </footer>
+    </article>
   );
 }

@@ -5,14 +5,14 @@ const COHORT = `/2507-CAMERON`
 const API = BASE_URL + COHORT;
 
 export default function useQuery() {
-    const [guests, setGuests] = useState();
+    const [data, setData] = useState();
 
     useEffect(() => {
         const query = async () => {
             try {
                 const response = await fetch(API + `/guests`);
                 const jsonResponse = await response.json();
-                setGuests(jsonResponse.data);
+                setData(jsonResponse.data);
             } catch (e) {
                 console.error(e);
             }
@@ -20,5 +20,5 @@ export default function useQuery() {
         query();
     }, [])
 
-    return guests;
+    return { data };
 }
