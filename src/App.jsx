@@ -24,9 +24,8 @@ function GuestCard({ guest }) {
   return (
     <article className="guest">
       <h2>{guest.name} </h2>
-      <p>{guest.bio}</p>
       <footer>
-        Email: {guest.email} - - - Phone: {guest.phone}
+        Email: {guest.email} Phone: {guest.phone}
       </footer>
     </article>
   );

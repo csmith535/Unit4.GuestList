@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.guests {
+  max-width: fit-content;
+}
+
+.guest {
+  background-color: lightblue;
+  border-radius: 1em;
+  padding: 0.8em;
+  margin: 1em;
+}
+
+.guest:hover {
+  cursor: pointer;
+  scale: 1.01;
+}
+
+h2 {
+  margin-top: 0.1em;
+  margin-bottom: 0.3em;
+}
