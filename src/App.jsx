@@ -1,11 +1,11 @@
 import useQuery from "./hooks/useQuery";
 
 export default function App() {
-  const { data: guests } = useQuery();
+  const { data: guests } = useQuery("/guests");
   return (
     <>
       <h1>Guest List</h1>
-      <GuestList guests={guests} />
+      <GuestList guests={guests || []} />
     </>
   );
 }
@@ -26,7 +26,7 @@ function GuestCard({ guest }) {
       <h2>{guest.name} </h2>
       <p>{guest.bio}</p>
       <footer>
-        Email: {guest.email} Phone: {guest.phone}
+        Email: {guest.email} - - - Phone: {guest.phone}
       </footer>
     </article>
   );
