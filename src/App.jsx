@@ -13,7 +13,13 @@ export default function App() {
       <h1>Guest List</h1>
       <div className="main-content">
         <GuestList guests={guests || []} onGuestClick={setSelectedID} />
-        {SelectedID && guest && <GuestDetails guest={guest} />}
+        {SelectedID && guest ? (
+          <GuestDetails guest={guest} setSelectedID={setSelectedID} />
+        ) : (
+          <div className="placeholder">
+            <p>Select a guest to see more details</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -38,7 +44,7 @@ function GuestCard({ guest, onGuestClick }) {
   );
 }
 
-function GuestDetails({ guest }) {
+function GuestDetails({ guest, setSelectedID }) {
   return (
     <article className="guest-details">
       <h2>
@@ -49,7 +55,7 @@ function GuestDetails({ guest }) {
       <footer>
         Email: {guest.email} Phone: {guest.phone}
       </footer>
-      <button>Return</button>
+      <button onClick={() => setSelectedID(null)}>Return</button>
     </article>
   );
 }
