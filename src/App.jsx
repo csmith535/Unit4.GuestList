@@ -48,7 +48,7 @@ function GuestDetails({ guest, setSelectedID }) {
   return (
     <article className="guest-details">
       <h2>
-        {guest.name} Guest ID: #{guest.id}
+        {guest.name} - Guest ID: #{guest.id}
       </h2>
       <p>Employment: {guest.job}</p>
       <p>Interests: {guest.bio}</p>
